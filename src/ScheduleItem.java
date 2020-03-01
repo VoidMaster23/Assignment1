@@ -11,7 +11,8 @@ import java.lang.Comparable;
 public class ScheduleItem implements Comparable{
 // instance variables
 private String key; // stores schedule iformation
-private int[] areas; // stores area information
+private String areas; // stores area information
+
 
 
 /**
@@ -25,9 +26,9 @@ areas = null;
 /**
  * creates a ScheduleItem object and initialises the key and areas instance variables
  * @param key Identifying key for the scheduleItem in the format stage_dayOfMonth_startTime
- * @param areas Array that stores all areas to be affected by loadshedding at the scheduled period and stage
+ * @param areas Stores all areas to be affected by loadshedding at the scheduled period and stage
  **/
-public ScheduleItem(String key, int[] areas){
+public ScheduleItem(String key, String areas){
 
 this.key = key;
 this.areas = areas;
@@ -45,9 +46,9 @@ return this.key;
 
 /**
  * Accessor method for the areas list
- * @return Array of areas to be affected by the schuled loadshedding
+ * @return  Areas to be affected by the schuled loadshedding
  **/
-public int[] getAreasAffected(){
+public String getAreasAffected(){
 return this.areas;
 }
 
@@ -66,7 +67,7 @@ this.key = key;
  * Mutator method for the areas
  * @params areas New set of areas to be assigned to the scheduleItem
  **/
-public void setAreas(int[] areas){
+public void setAreas(String areas){
 this.areas = areas;
 }
 
