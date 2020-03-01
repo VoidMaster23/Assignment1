@@ -8,7 +8,7 @@ import java.lang.Comparable;
  *
  * @author Edson Shivuri
  **/
-public class ScheduleItem implements Comparable{
+public class ScheduleItem implements Comparable<ScheduleItem>{
 // instance variables
 private String key; // stores schedule iformation
 private String areas; // stores area information
@@ -100,10 +100,9 @@ if(other == null){
  * Compares ScheduleItem objects by checking their key instance variables. A ScheduleItem object is smaller than another if any combination of stage, day of the month or time in the key is less than that of another object
  *@return 0 if the objects are equal, 1 if this object is greater than the one it is being compared with and -1 if it is smaller 
  **/
-public int compareTo(Object other){
+public int compareTo(ScheduleItem otherItem){
  // just need to compare the keys (time) to determine whether an item 
  // this WILL return an exception that must be handled later
-	ScheduleItem otherItem = (ScheduleItem) other;
 	return this.key.compareTo(otherItem.getKey());
   
  }
