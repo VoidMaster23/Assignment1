@@ -6,6 +6,9 @@ public class LSArrayApp{
  	//The array to store ScheduleItem objects
 	 static ScheduleItem[] itemArr;
 
+	 //instrumentation
+	 private static int finCount;
+
 
 
 	/**
@@ -69,7 +72,8 @@ public class LSArrayApp{
 		//output
 		System.out.println(breakKey(toFind));
 		System.out.println("Areas Affected: "+result);
-
+		System.out.println("Number of operations for find: "+Integer.toString(finCount));
+		System.out.println();
 	}
 
 
@@ -90,9 +94,11 @@ public class LSArrayApp{
 	 * @return the list of areas for the first matching combination of the supplied key or a not found message
 	 **/
 	private static String find(String key){
-		boolean found = false;
+		finCount = 0;
 		for(int i = 0; i < itemArr.length; i++){
 			//equality check
+
+			finCount++;
 			if(itemArr[i].getKey().equals(key)){
 				return itemArr[i].getAreasAffected();
 			}

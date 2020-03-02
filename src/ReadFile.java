@@ -50,7 +50,7 @@ public class ReadFile{
 		Scanner scanner  = new Scanner(toRead);
 		
 		//iterate through the file to be read
-		while(scanner.hasNextLine()){
+		while(scanner.hasNextLine() && numElements < 2976){
 			String[] line = scanner.nextLine().split(" ", 2);//takes in the line and splits into a key and then items
 			String key = line[0];
 			String areas = line[1];
@@ -79,10 +79,7 @@ public class ReadFile{
 	 *
 	 **/
 	private void arrAdd(ScheduleItem item){
-		
-		if(numElements < 2976){
-			itemArr[numElements] = item;
-		}
+		itemArr[numElements] = item;
 		
 	}
 
