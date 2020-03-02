@@ -27,11 +27,13 @@ public class ReadFile{
 		
 		//determine which class called the read
 		StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-		if(stackTraceElements[1].getClassName().equals("LSArrayApp")){
+		if(stackTraceElements[2].getClassName().equals("LSArrayApp")){
                           fromArr = true; 
                   }else{  
                           fromArr = false;
                   }
+
+	
 
 	}
 
@@ -80,7 +82,6 @@ public class ReadFile{
 		
 		if(numElements < 2976){
 			itemArr[numElements] = item;
-		
 		}
 		
 	}
@@ -90,8 +91,9 @@ public class ReadFile{
 	 * returns the array to be used by the LSArrayApp
 	 * @return Array of ScheduleItem objects
 	 **/
-	private ScheduleItem[] getItemsArray(){
-	return itemArr;
+	public ScheduleItem[] getItemsArray(){
+		ScheduleItem[] myItems = itemArr.clone();
+		return myItems;
 	}
 
 
