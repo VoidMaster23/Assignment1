@@ -4,7 +4,10 @@
  **/
 
 public class BST<T extends Comparable<? super T>> extends BT<T>{
+	public static int finCount = 0;
+	public static int insCount = 0;
 	
+
 	/**
 	 * Inserts a node into the BST
 	 * @param data Data object to be inserted
@@ -25,12 +28,15 @@ public class BST<T extends Comparable<? super T>> extends BT<T>{
 	 * @param node reference node to be compared to
 	 **/
 	private void insert(T data, BTNode<T> node){
+		insCount++;
 		if(data.compareTo(node.getData()) <= 0){
+			insCount++;
 			if(node.getLeft() == null ) 
 				node.setLeft(new BTNode<T>(data,null,null));
 			else 
 				insert(data, node.getLeft());
 		}else{
+			insCount++;
 			if(node.getRight() == null)
 				node.setRight(new BTNode<T>(data, null, null));
 			else
@@ -61,15 +67,24 @@ public class BST<T extends Comparable<? super T>> extends BT<T>{
 	 * @return Null if the item was not found and the node if it was
 	 **/
 	private BTNode<T> find(T data, BTNode<T> node){
-		if(data.compareTo(node.getData()) == 0)
+		finCount++;
+		if(data.compareTo(node.getData()) == 0){
+			
 			return node;
-		else if(data.compareTo(node.getData()) < 0)
-			return (node.getLeft() == null) ? null : find(data, node.getLeft());
-		else
-			return (node.getRight() == null) ? null: find(data, node.getRight());
-	}
+		}
+	
+		else{ 
+			finCount++;
+			if(data.compareTo(node.getData()) < 0){
+				return (node.getLeft() == null) ? null : find(data, node.getLeft());
+			}else{
+				return (node.getRight() == null) ? null: find(data, node.getRight());
+			}
+		}
 
 
 
 
+
+}
 }

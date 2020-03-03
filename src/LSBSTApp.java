@@ -57,9 +57,12 @@ public class LSBSTApp{
 		else
 			System.out.println(found.getData().toString());
 
-		
+		System.out.println("Number of insert operations: "+itemBST.insCount);
+		System.out.println("Number of find operations: "+itemBST.finCount);	
+		System.out.println();	
 	}
 
 
+	
 }
 
