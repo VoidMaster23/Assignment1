@@ -35,23 +35,12 @@ public class LSArrayApp{
 	 **/
 	public static void printAllAreas(){
 		for(int i = 0; i < itemArr.length; i++){
-			String info = breakKey(itemArr[i].getKey());
+			String info = CommonMethods.breakKey(itemArr[i].getKey());
 			String areas = "Areas Affected: "+itemArr[i].getAreasAffected();
 			System.out.println(info);
 			System.out.println(areas);
 			System.out.println();
 		}
-	}
-
-	/**
-	 * Splits a key into its stage, day and start time formatted for output
-	 * @param key the key to be split up 
-	 * @return the split up key in the format "Stage: x, Day: y, Start Time: z:00"
-	 **/
-	public static String breakKey(String key){
-		String[] info = key.split("_");
-		return "Stage: "+info[0]+", Day: "+info[1]+", Start Time: "+info[2]+":00";
-
 	}
 
 
@@ -64,28 +53,16 @@ public class LSArrayApp{
 	 **/
 	public static void printAreas(String stage, String day, String startTime){
 		//build the key
-		String toFind = makeKey(stage, day, startTime);
+		String toFind = CommonMethods.makeKey(stage, day, startTime);
 
 		//find the item
 		String result = find(toFind);
 
 		//output
-		System.out.println(breakKey(toFind));
+		System.out.println(CommonMethods.breakKey(toFind));
 		System.out.println("Areas Affected: "+result);
 		System.out.println("Number of operations for find: "+Integer.toString(finCount));
 		System.out.println();
-	}
-
-
-	/**
-	 *Generates a key that can be used to search the array
-	 *@param stage stage of the loadshedding
-         *@param day day of the month the loadshedding will take place
-         *@param startTime starting hour of the loadshedding, e.g 8pm will be  20
-	 *@return A key of type String that can be used to search the array
-	 **/ 
-	private static String makeKey(String stage, String day, String startTime){
-		return stage+"_"+day+"_"+startTime;
 	}
 
 	/**

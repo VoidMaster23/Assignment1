@@ -16,7 +16,9 @@ public class ReadFile{
 	//Array that will be used in the Array app
 	private ScheduleItem[] itemArr;
 	private  int numElements;
-
+	
+	//BST USed for the BST app
+	private BST<ScheduleItem> itemBST;
 	
 	/**
 	 *Constructor for a ReadFile object that instantiates the instance vatiables and determines which which add method to use
@@ -24,7 +26,9 @@ public class ReadFile{
 	public ReadFile(){
 		itemArr = new ScheduleItem[2976];
 		numElements = 0;	
-		
+	
+		itemBST = new BST<ScheduleItem>();	
+
 		//determine which class called the read
 		StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
 		if(stackTraceElements[2].getClassName().equals("LSArrayApp")){
@@ -62,10 +66,15 @@ public class ReadFile{
 			if(fromArr){
 				arrAdd(item);
 				numElements++;	
+			}else{
+
+				itemBST.insert(item);
+			
 			}
 
 		}//while
 	}catch(Exception e){
+			e.printStackTrace();
 			System.out.println("Error: File Not Found in Directory");
 			System.exit(0);	
 		}
@@ -93,7 +102,13 @@ public class ReadFile{
 		return myItems;
 	}
 
-
+	/**
+	 * returns the BST to be used by the LSBSTApp
+	 * @return BST of SCheduleItem objects
+	 **/
+	 public BST<ScheduleItem> getItemsBST(){
+	 	return this.itemBST;
+	 } 
 
 
 }
