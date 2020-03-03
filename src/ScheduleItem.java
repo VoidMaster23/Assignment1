@@ -106,4 +106,14 @@ public int compareTo(ScheduleItem otherItem){
 	return this.key.compareTo(otherItem.getKey());
   
  }
+
+
+/**
+ * toString method for the ScheduleItem class
+ **/
+public String toString(){
+return CommonMethods.breakKey(this.key)+"\n"+"Areas Affected: "+this.areas+"\n";
+
+}
+
 }

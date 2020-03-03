@@ -56,11 +56,11 @@ public class BT<T>{
 
 	
 	/**
-	 * Method to perfom actions on a visited node, must be overriden by children
+	 * Prints out the node data
 	 *@param node Node to be acted upon
 	 */
 	public void visit(BTNode<T> node){
-	
+	System.out.println(node.getData().toString());
 	}
 
 
@@ -83,6 +83,52 @@ public class BT<T>{
 		}
 	
 	}
+
+	/**
+         * Perform a postOrder traversal recursively starting at the root
+         **/
+        public void postOrder(){
+                postOrder(root);
+        }
+
+	/**
+         *  Visit each child then perform an action on the parent node
+         * @param node The root node of the tree and all subsequent subtrees
+         **/
+        private void postOrder(BTNode<T> node){
+                if(node != null){
+     
+                        postOrder(node.getLeft());
+                        postOrder(node.getRight());
+			visit(node);
+                }
+
+        }
+
+	/**
+         * Perform a inOrder traversal recursively starting at the root
+         **/
+        public void inOrder(){
+                inOrder(root);
+        }
+
+        /**
+         *  Visit left child, perform an action on the parent node then visit the right child
+         * @param node The root node of the tree and all subsequent subtrees
+         **/
+        private void inOrder(BTNode<T> node){
+                if(node != null){
+
+                        inOrder(node.getLeft());
+			visit(node);
+                        inOrder(node.getRight());
+                }
+
+        }
+
+
+
+
 
 
 }

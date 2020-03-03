@@ -35,11 +35,7 @@ public class LSArrayApp{
 	 **/
 	public static void printAllAreas(){
 		for(int i = 0; i < itemArr.length; i++){
-			String info = CommonMethods.breakKey(itemArr[i].getKey());
-			String areas = "Areas Affected: "+itemArr[i].getAreasAffected();
-			System.out.println(info);
-			System.out.println(areas);
-			System.out.println();
+			System.out.println(itemArr[i].toString());
 		}
 	}
 

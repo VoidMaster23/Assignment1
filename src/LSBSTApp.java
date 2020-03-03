@@ -18,8 +18,48 @@ public class LSBSTApp{
 		ReadFile readFile = new ReadFile();
 		readFile.read();
 		itemBST = readFile.getItemsBST();
-		System.out.println(itemBST.getSize());
+		
+		//Determine which function to call
+		if(args.length == 0){
+                        printAllAreas();
+                }else if(args.length == 3){
+                       printAreas(args[0], args[1], args[2]);
+                }else{
+                        System.out.println("Your input should be of the format xx yy zz ");
+                }
+
 	}
+
+	/**Prints all loadshedding details
+         **/
+        public static void printAllAreas(){
+		//performs an inOrder traversal
+		itemBST.inOrder();
+	}
+
+	/**
+         * Prints out the list of areas for the first matching combination of the supplied parameters that it is found or "Areas not found" if there is no match 
+         * @param stage stage of the loadshedding
+         * @param day day of the month the loadshedding will take place
+         * @param startTime starting hour of the loadshedding, e.g 8pm will be  20 
+         **/
+	public static void printAreas(String stage,String day, String startTime){
+		//bulild the key
+		String toFind = CommonMethods.makeKey(stage, day, startTime);
+		ScheduleItem temp = new ScheduleItem(toFind, null);
+
+		//find the node
+		BTNode<ScheduleItem> found = itemBST.find(temp);
+
+		//output
+		if(found == null)
+			System.out.println("Areas not Found");
+		else
+			System.out.println(found.getData().toString());
+
+		
+	}
+
 
 }
 
