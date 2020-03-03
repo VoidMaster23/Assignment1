@@ -14,6 +14,7 @@ public class BST<T extends Comparable<? super T>> extends BT<T>{
 	 **/
 	public void insert(T data){
 		
+		insCount++;
 		//if there is no root node, create one
 		if(root == null) root  = new BTNode<T>(data, null, null);
 		//place the data in the tree
@@ -36,7 +37,6 @@ public class BST<T extends Comparable<? super T>> extends BT<T>{
 			else 
 				insert(data, node.getLeft());
 		}else{
-			insCount++;
 			if(node.getRight() == null)
 				node.setRight(new BTNode<T>(data, null, null));
 			else
