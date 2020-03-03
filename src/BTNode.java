@@ -30,6 +30,31 @@ public class BTNode<T>{
 	}
 
 	/**
+	 * Set the node data
+	 * @param data Data object to be entered
+	 **/
+	public void setData(T data){
+	this.data = data;
+	}
+
+	 /**
+         * Set the leftNode
+         * @param node Node to be entered
+         **/
+        public void setLeft(BTNode<T> node){
+        this.left = node;
+        }
+	
+       	/**
+         * Set the right node
+         * @param node Node  to be entered
+         **/
+        public void setRight(BTNode<T> node){
+        this.right = node;
+        }
+
+
+	/**
 	 * Retrieve the left child node
 	 * @return the left child node
 	 **/
