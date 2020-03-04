@@ -43,13 +43,17 @@ public class ReadFile{
 
 
 	/**
-	 * Reads data from the file
+	 * Reads data from the file or a subset of the file
+	 * @param fileN name of the file to be used , e.g "text.txt"
 	 **/
-	public void read(){
-
+	public void read(String fileN){
+	File toRead;
 	try{
-		File toRead = new File("../res/Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt");// allows the program to work with this
-	
+		if(fileN == null){
+		toRead = new File("../res/Load_Shedding_All_Areas_Schedule_and_Map.clean.final.txt");// allows the program to work with this
+		}else{
+			toRead = new File("../res/"+fileN);
+		}
 		//declare the scanner
 		Scanner scanner  = new Scanner(toRead);
 		
@@ -74,6 +78,9 @@ public class ReadFile{
 
 		}//while
 	}catch(Exception e){
+			//code to run my output files
+			
+			
 			e.printStackTrace();
 			System.out.println("Error: File Not Found in Directory");
 			System.exit(0);	

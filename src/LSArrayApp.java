@@ -17,13 +17,20 @@ public class LSArrayApp{
 	 **/
 	public static void main(String[] args){
 		ReadFile readFile = new ReadFile();
-		readFile.read();
+
+		if(args.length == 4){
+			readFile.read(args[3]);
+		}else{
+			readFile.read(null);
+		}
+
+		
 		itemArr = readFile.getItemsArray().clone();
 		
 
 		if(args.length == 0){
 			printAllAreas();
-		}else if(args.length == 3){
+		}else if(args.length == 3 || args.length == 4 ){
 			printAreas(args[0], args[1], args[2]);
 		}else{
 			System.out.println("Your input should be of the format xx yy zz ");
@@ -55,10 +62,14 @@ public class LSArrayApp{
 		String result = find(toFind);
 
 		//output
-		System.out.println(CommonMethods.breakKey(toFind));
-		System.out.println("Areas Affected: "+result);
-		System.out.println("Number of operations for find: "+Integer.toString(finCount));
-		System.out.println();
+		//System.out.println(CommonMethods.breakKey(toFind));
+		//System.out.println("Areas Affected: "+result);
+		//System.out.println("Number of operations for find: "+Integer.toString(finCount));
+		//System.out.println();
+		
+
+		//Experiment Code
+		System.out.print(finCount);
 	}
 
 	/**
