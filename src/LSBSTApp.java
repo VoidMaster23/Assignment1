@@ -16,13 +16,18 @@ public class LSBSTApp{
 	 **/
 	public static void main(String[] args){
 		ReadFile readFile = new ReadFile();
-		readFile.read();
+		if(args.length == 4){
+                        readFile.read(args[3]);
+                }else{
+                        readFile.read(null);
+                }
+
 		itemBST = readFile.getItemsBST();
 		
 		//Determine which function to call
 		if(args.length == 0){
                         printAllAreas();
-                }else if(args.length == 3){
+                }else if(args.length == 3 || args.length == 4){
                        printAreas(args[0], args[1], args[2]);
                 }else{
                         System.out.println("Your input should be of the format xx yy zz ");
@@ -52,14 +57,17 @@ public class LSBSTApp{
 		BTNode<ScheduleItem> found = itemBST.find(temp);
 
 		//output
-		if(found == null)
-			System.out.println("Areas not Found");
-		else
-			System.out.println(found.getData().toString());
+		//if(found == null)
+		//	System.out.println("Areas not Found");
+		//else
+		//	System.out.println(found.getData().toString());
 
-		System.out.println("Number of insert operations: "+itemBST.insCount);
-		System.out.println("Number of find operations: "+itemBST.finCount);	
-		System.out.println();	
+		//System.out.println("Number of insert operations: "+itemBST.insCount);
+		//System.out.println("Number of find operations: "+itemBST.finCount);	
+		//System.out.println();
+
+		//Experiment Code
+		System.out.print(itemBST.finCount);	
 	}
 
 
