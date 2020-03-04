@@ -67,7 +67,8 @@ public class LSBSTApp{
 		//System.out.println();
 
 		//Experiment Code
-		System.out.print(itemBST.finCount);	
+		//System.out.print(itemBST.finCount);
+		System.out.print(itemBST.insCount);	
 	}
 
 

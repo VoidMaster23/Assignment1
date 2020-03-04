@@ -65,7 +65,7 @@ public class LSArrayApp{
 		System.out.println(CommonMethods.breakKey(toFind));
 		System.out.println("Areas Affected: "+result);
 		System.out.println("Number of operations for find: "+Integer.toString(finCount));
-		//System.out.println();
+		System.out.println();
 		
 
 		//Experiment Code
