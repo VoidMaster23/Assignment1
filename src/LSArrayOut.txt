@@ -1,0 +1,82 @@
+Search Results
+
+Input: 1 1 00
+Stage: 1, Day: 1, Start Time: 00:00
+Areas Affected: 1
+Number of operations for find: 1
+
+Input: 6 29 04
+Stage: 6, Day: 29, Start Time: 04:00
+Areas Affected: 6, 14, 2, 10, 3, 11
+Number of operations for find: 2092
+
+InputL 8 25 22
+Stage: 8, Day: 25, Start Time: 22:00
+Areas Affected: 14, 6, 10, 2, 15, 7, 11, 3
+Number of operations for find: 2963
+
+First 10 Lines of PrintAllAreas():
+Stage: 1, Day: 1, Start Time: 00:00
+Areas Affected: 1
+
+Stage: 1, Day: 17, Start Time: 00:00
+Areas Affected: 1
+
+Stage: 1, Day: 2, Start Time: 00:00
+Areas Affected: 13
+
+Stage: 1, Day: 18, Start Time: 00:00
+Areas Affected: 13
+
+Stage: 1, Day: 3, Start Time: 00:00
+Areas Affected: 9
+
+Stage: 1, Day: 19, Start Time: 00:00
+Areas Affected: 9
+
+Stage: 1, Day: 4, Start Time: 00:00
+Areas Affected: 5
+
+Stage: 1, Day: 20, Start Time: 00:00
+Areas Affected: 5
+
+Stage: 1, Day: 5, Start Time: 00:00
+Areas Affected: 2
+
+Stage: 1, Day: 21, Start Time: 00:00
+Areas Affected: 2
+
+
+Last 10 Lines of PrintAllAreas()
+Stage: 8, Day: 27, Start Time: 22:00
+Areas Affected: 14, 6, 10, 2, 15, 7, 11, 3
+
+Stage: 8, Day: 12, Start Time: 22:00
+Areas Affected: 14, 6, 10, 2, 15, 7, 11, 3
+
+Stage: 8, Day: 28, Start Time: 22:00
+Areas Affected: 14, 6, 10, 2, 15, 7, 11, 3
+
+Stage: 8, Day: 13, Start Time: 22:00
+Areas Affected: 15, 7, 11, 3, 12, 4, 8, 16
+
+Stage: 8, Day: 29, Start Time: 22:00
+Areas Affected: 15, 7, 11, 3, 12, 4, 8, 16
+
+Stage: 8, Day: 14, Start Time: 22:00
+Areas Affected: 15, 7, 11, 3, 12, 4, 8, 16
+
+Stage: 8, Day: 30, Start Time: 22:00
+Areas Affected: 15, 7, 11, 3, 12, 4, 8, 16
+
+Stage: 8, Day: 15, Start Time: 22:00
+Areas Affected: 15, 7, 11, 3, 12, 4, 8, 16
+
+Stage: 8, Day: 31, Start Time: 22:00
+Areas Affected: 15, 7, 11, 3, 12, 4, 8, 16
+
+Stage: 8, Day: 16, Start Time: 22:00
+Areas Affected: 15, 7, 11, 3, 12, 4, 8, 16
+
+
+

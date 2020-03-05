@@ -52,23 +52,26 @@ public class LSBSTApp{
 		//bulild the key
 		String toFind = CommonMethods.makeKey(stage, day, startTime);
 		ScheduleItem temp = new ScheduleItem(toFind, null);
+		//System.out.println(temp.toString());
+
 
 		//find the node
 		BTNode<ScheduleItem> found = itemBST.find(temp);
+	//	System.out.println(found.toString());
 
 		//output
-		//if(found == null)
-		//	System.out.println("Areas not Found");
-		//else
-		//	System.out.println(found.getData().toString());
+		if(found == null)
+			System.out.println("Areas not Found");
+		else
+			System.out.println(found.getData().toString());
 
-		//System.out.println("Number of insert operations: "+itemBST.insCount);
-		//System.out.println("Number of find operations: "+itemBST.finCount);	
-		//System.out.println();
+		System.out.println("Number of insert operations: "+itemBST.insCount);
+		System.out.println("Number of find operations: "+itemBST.finCount);	
+		System.out.println();
 
 		//Experiment Code
 		//System.out.print(itemBST.finCount);
-		System.out.print(itemBST.insCount);	
+		//System.out.print(itemBST.insCount);	
 	}
 
 

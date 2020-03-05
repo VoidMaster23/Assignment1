@@ -1,0 +1,13 @@
+Input: 12 4 24
+Stage: 12, Day: 4, Start Time: 24:00
+Areas Affected: Areas not Found
+Number of operations for find: 2976
+
+Input: 4 24
+Your input should be of the format xx yy zz 
+
+Input: 1 15 28
+Stage: 1, Day: 15, Start Time: 28:00
+Areas Affected: Areas not Found
+Number of operations for find: 2976
+

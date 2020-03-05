@@ -4,7 +4,7 @@
  **/
 public class BT<T>{
 	//stores the root node 
-	protected BTNode<T> root;
+	 BTNode<T> root;
 
 	/**
 	 * Constructor for the BT class

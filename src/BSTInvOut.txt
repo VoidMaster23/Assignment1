@@ -1,0 +1,13 @@
+Input: 2 56 4
+Areas not Found
+Number of insert operations: 278192
+Number of find operations: 72
+
+Input: 2 4
+Your input should be of the format xx yy zz 
+
+Input: 2 4 91
+Areas not Found
+Number of insert operations: 278192
+Number of find operations: 72
+
